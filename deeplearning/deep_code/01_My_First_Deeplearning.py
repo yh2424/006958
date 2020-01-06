@@ -8,11 +8,16 @@ from keras.layers import Dense
 # 필요한 라이브러리를 불러옵니다.
 import numpy
 import tensorflow as tf
+from tensorflow import keras
+# from keras.models import Sequential
+# from keras.layers import Dense
 
 # 실행할 때마다 같은 결과를 출력하기 위해 설정하는 부분입니다.
 seed = 0
 numpy.random.seed(seed)
-tf.set_random_seed(seed)
+# tf.set_random_seed(seed)
+tf.random.set_seed(seed)
+
 
 # 준비된 수술 환자 데이터를 불러들입니다.
 Data_set = numpy.loadtxt("../dataset/ThoraricSurgery.csv", delimiter=",")
