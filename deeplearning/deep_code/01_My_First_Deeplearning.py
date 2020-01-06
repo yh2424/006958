@@ -16,7 +16,7 @@ from tensorflow import keras
 seed = 0
 numpy.random.seed(seed)
 # tf.set_random_seed(seed)
-tf.random.set_seed(seed)
+tf.random.set_seed(seed) #Change - https://www.tensorflow.org/api_docs/python/tf/random/set_seed
 
 
 # 준비된 수술 환자 데이터를 불러들입니다.
