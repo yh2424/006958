@@ -8,9 +8,9 @@ def clear_all():
 
         del globals()[var]
 
-    print ("imported")
+    print ("Var cleared")
 
-    return print("return")
+    # return print("return")
 # if __name__ == "__main__":
 #     clear_all()
 

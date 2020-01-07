@@ -1,5 +1,9 @@
 import tensorflow as tf
 
+## For tensorflow v1
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
 # x, y의 데이터 값
 data = [[2, 81], [4, 93], [6, 91], [8, 97]]
 x_data = [x_row[0] for x_row in data]
@@ -30,5 +34,5 @@ with tf.Session() as sess:
     for step in range(2001):
         sess.run(gradient_decent)
         # 100번마다 결과 출력
-        if step % 100 == 0:
+        if step % 200 == 0:
             print("Epoch: %.f, RMSE = %.04f, 기울기 a = %.4f, y 절편 b = %.4f" % (step,sess.run(rmse),sess.run(a),sess.run(b)))

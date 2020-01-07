@@ -1,20 +1,27 @@
+import tensorflow as tf
 
-a = 3
-# from temp.clear_all import clear_all
+def fu(x1, x2):
+    return x1 ** 2.0 - x1 * 3  + x2 ** 2
 
-def clear_all():
-    """Clears all the variables from the workspace of the spyder application."""
-    gl = globals().copy()
-    for var in gl:
-        if var[0] == '_': continue
-        if 'func' in str(globals()[var]): continue
-        if 'module' in str(globals()[var]): continue
+def fu_minimzie():
+    return x1 ** 2.0 - x1 * 3  + x2 ** 2
 
-        del globals()[var]
+def reset():
+    x1 = tf.Variable(10.0)
+    x2 = tf.Variable(10.0)
+    return x1, x2
 
-    print("imported")
+x1, x2 = reset()
+opt = tf.keras.optimizers.SGD(learning_rate=0.1)
 
-# if __name__ == "__main__":
-#     clear_all()
+for i in range(50):
+    print ('y = {:.1f}, x1 = {:.1f}, x2 = {:.1f}'.format(fu(x1, x2).numpy(), x1.numpy(), x2.numpy()))
+    opt.minimize(fu_minimzie, var_list=[x1, x2])
 
-clear_all()
+
+# ##
+# def y():
+#     return (x + 2)
+# x = y()
+# print (y())
+#
